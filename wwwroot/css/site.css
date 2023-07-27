@@ -1,0 +1,99 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+/* fundo bg */
+.bg {
+    background-image: url("/images/bitemeburgers-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* _LanchesResumo */
+#burgers {
+    transition: transform 0.5s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px
+}
+
+.custom-image {
+    width: 300px;
+    height: 300px;
+}
+
+#burgers:hover {
+    transform: scale(1.1);
+}
+
+
+/* carrinho de compras */
+.custom-image-carrinho {
+    width: 50px;
+    height: 50px;
+}
+
+.custom-image-lixeira {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* contato */
+#contato-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+    background-color: rgba(120, 120, 120, 0.4);
+    transition: transform 0.5s ease;
+}
+.contato-info:hover {
+    transform: scale(1.1);
+}
+
+.contato-info h5, a {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color:#000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.contato-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.contato-info img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+

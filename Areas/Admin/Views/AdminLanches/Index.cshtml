@@ -1,0 +1,80 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<BiteMeBurgers.Models.LancheModel>
+
+@{
+    ViewData["Title"] = "Lanches Admin";
+}
+
+<h1>Lanche</h1>
+<form method="get" class="form-inline">
+    <div class="row">
+        <div class="form-group col-md-2">
+            <input name="filter" class="form-control" placeholder="filtro" value="@Model.RouteValue["Filter"]" />
+        </div>
+        <div class="form-group col-md-2">
+            <button type="submit" class="btn btn-info">Procurar</button>
+        </div>
+    </div>
+</form>
+<br />
+Total de Lanches : @Model.TotalRecordCount
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>
+
+<p>
+    <a class="btn btn-outline-info" asp-controller="AdminLanches" asp-action="Create">Criar Novo Lanche</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoCurta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLanchePreferido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmEstoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoCurta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsLanchePreferido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmEstoque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

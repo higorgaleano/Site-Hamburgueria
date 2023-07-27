@@ -1,0 +1,18 @@
+﻿@model HomeViewModel
+
+<div class="bg">
+
+    <partial name="_Carousel"/>
+
+    <div class="container cols-6 m-4">
+        <img src="~/images/Preferidos-Header.png" width="96%" height="250px" />
+    </div>
+
+    <div class="row text-center">
+        @foreach (var item in Model.LanchesPreferidos)
+        {
+            <partial name="_LanchesResumo" for="@item"></partial>
+        }
+    </div>
+
+</div>
